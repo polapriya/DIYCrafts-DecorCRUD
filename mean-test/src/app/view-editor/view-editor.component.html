@@ -1,0 +1,33 @@
+
+<style>
+  h1 {text-align: center;
+    font-size: 200%;
+    font-family: 'Dancing Script';
+      text-align: center;}
+table{
+  font-family: 'Dancing Script';
+      text-align: center;
+}
+div{
+  font-family: 'Dancing Script';
+      text-align: center;
+}
+select{font-family: courier;}
+  </style> 
+  <div>
+<h1>FLOAT YOUR IDEAS</h1>
+<table style="width:100%">
+  <tr>
+    <td>
+<h2><label for="Type of Event"><b>Fiesta</b></label></h2>
+</table>
+
+</div> 
+<div>
+  <span>
+    <select [(ngModel)]="name">
+    <option *ngFor="let dropdowns of dropdown">{{dropdowns}}</option>
+  </select>
+  <p><b>You selected {{name}}</b></p>
+  </span>
+</div>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+  
+* {
+  box-sizing: border-box;
+  
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #E9967A;
+  padding: 0px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  height:150px;
+  width: 90%;
+  
+}
+Img{
+  height:150px;
+  width: 10%;
+  padding: 5px;
+  background-color: #E9967A;
+  float: right;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  
+  height: 450px; 
+  background: #FFEBCD;
+  padding: 30px;
+  font-family: courier;
+}
+table{background: #FFEBCD;
+  padding: 10px;
+  font-family: 'courier';
+  border-collapse: collapse;
+  font-size: 15px;
+  width: 100%;
+  }
+  th, td {
+  padding: 2px;
+  text-align: left;
+  border-bottom: 1px solid rgb(206, 16, 16);
+}
+
+tr:nth-child(even) {background-color:  #E9967A;}
+/* Style the list inside the menu */
+nav ul { 
+  list-style-type: none;
+  padding: 0;
+}
+
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 600px) {
+  nav{
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+  <img 
+   src='{{imagepath}}'/>
+<header>
+ 
+  <h1>{{title}}</h1>
+  <h2>{{tagline}}</h2>
+  
+</header>
+<app-menu></app-menu>
+<section>
+  <nav>
+      <app-profile-editor></app-profile-editor>
+  </nav>
+</section>
+<table align ="center" cellspacing="30">
+  <tr>
+      <th>Fiesta</th>
+      <th>Publisher</th>
+      <th>Cost Details</th>
+      <th>Equipment Required</th>
+      <th>Image URL</th>
+      <th>YouTube Link</th>
+      <!-- <th>ID</th>
+      <th>Index</th>   -->
+  </tr>
+  <tr *ngFor="let craft of crafts let i = index">
+      <td>{{craft.Fiesta}}</td>
+      <td>{{craft.Publisher}}</td>
+      <td>{{craft.CostDetails}}</td>
+      <td>{{craft.EquipmentRequired}}</td>
+      <td>{{craft.ImageURL}}</td>
+      <td>{{craft.YoutubeLink}}</td>
+      <!-- <td>{{craft._id}}</td>
+            <td>(index {{i}})</td> -->
+            <td><button mat-button color="warn" (click)="onDelete(craft._id)">DELETE</button></td>
+  </tr>
+</table>
+</body>
+</html>
